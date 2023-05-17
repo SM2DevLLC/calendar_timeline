@@ -53,17 +53,20 @@ class DayItem extends StatelessWidget {
                     Theme.of(context).colorScheme.secondary,
                 borderRadius: BorderRadius.circular(12),
               )
-            : const BoxDecoration(color: Colors.transparent),
+            : BoxDecoration(
+                color: Colors.transparent,
+                border: Border.all(
+                    width: 1,
+                    color: dayColor ?? Theme.of(context).colorScheme.secondary),
+                borderRadius: BorderRadius.circular(12.0)),
         height: shrink ? 40 : 70,
         width: shrink ? 33 : 60,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             if (isSelected) ...[
               SizedBox(height: shrink ? 6 : 7),
-              if (!shrink) _buildDots(),
-              SizedBox(height: shrink ? 9 : 12),
-            ] else
-              SizedBox(height: shrink ? 10 : 14),
+            ],
             Text(
               dayNumber.toString(),
               style: isSelected ? selectedStyle : textStyle,

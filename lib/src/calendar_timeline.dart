@@ -330,7 +330,7 @@ class _CalendarTimelineState extends State<CalendarTimeline> {
         initialScrollIndex: _yearSelectedIndex ?? 0,
         initialAlignment: _scrollAlignment,
         itemScrollController: _controllerYear,
-        padding: EdgeInsets.only(left: widget.leftMargin),
+        padding: EdgeInsets.only(left: widget.leftMargin, right: 0),
         scrollDirection: Axis.horizontal,
         itemCount: _years.length,
         itemBuilder: (BuildContext context, int index) {
@@ -351,6 +351,9 @@ class _CalendarTimelineState extends State<CalendarTimeline> {
                   small: false,
                   shrink: widget.shrink,
                 ),
+                if (index < (_days.length - 1)) ...[
+                  SizedBox(width: 10),
+                ],
                 if (index == _years.length - 1)
                   // Last element to take space to do scroll to left side
                   SizedBox(
