@@ -133,7 +133,7 @@ class _CalendarTimelineState extends State<CalendarTimeline> {
         initialAlignment: _scrollAlignment,
         scrollDirection: Axis.horizontal,
         itemCount: _days.length,
-        padding: EdgeInsets.only(left: widget.leftMargin, right: 10),
+        padding: EdgeInsets.only(left: widget.leftMargin, right: 0),
         itemBuilder: (BuildContext context, int index) {
           final currentDay = _days[index];
           final shortName =
@@ -156,6 +156,9 @@ class _CalendarTimelineState extends State<CalendarTimeline> {
                 dotsColor: widget.dotsColor,
                 dayNameColor: widget.dayNameColor,
               ),
+              if (index < (_days.length - 1)) ...[
+                SizedBox(width: 10),
+              ],
               if (index == _days.length - 1)
                 SizedBox(
                     width: MediaQuery.of(context).size.width -
@@ -200,7 +203,7 @@ class _CalendarTimelineState extends State<CalendarTimeline> {
                     child: YearItem(
                       name: DateFormat.y(_locale).format(currentDate),
                       color: widget.monthColor,
-                      onTap: (){},
+                      onTap: () {},
                     ),
                   ),
                 MonthItem(
