@@ -1,3 +1,23 @@
+## 1.1.2 - 14/03/2023
+
+* Minor updates
+
+## 1.1.1 - 09/02/2023
+
+* Fix overflow error in day widget
+
+## 1.1.0 - 12/12/2022
+
+* Integrate a CI system
+* Add 'shrink' param to save more space
+* Thanks @pablojimpas and @HafzalBZ
+
+## 1.0.5 - 05/07/2022
+
+* Improve behavior and fixed errors
+* Add web support and migrate to null safety example project
+* Thanks @ZachGonzalezz and @manuelperez96
+
 ## 1.0.4 - 22/11/2021
 
 * Fix error when not set locale parameter
